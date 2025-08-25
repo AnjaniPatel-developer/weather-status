@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    width: 100%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #141d19, #5b548a);
+    color: hsla(0, 0%, 100%, 0.85);
+    padding: 40px 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Search bar */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 12px 20px;
+    height: 55px;
+    border-radius: 30px;
+    flex: 1;
+    font-size: 1rem;
+    min-width: 0; /* fix shrinking on mobile */
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.search button img {
+    width: 18px;
+}
+
+/* Hover effect */
+.search button:hover {
+    background: #d6f7f4;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 255, 218, 0.6);
+    animation: pulse 1.2s infinite;
+}
+
+/* Weather section */
+.weather-icon {
+    width: 120px;
+    margin-top: 20px;
+    animation: fadeIn 1s ease forwards;
+    max-width: 100%;
+}
+
+.weather h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.weather h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: -10px;
+    animation: fadeIn 1.4s ease forwards;
+}
+
+/* Details row */
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 10px;
+    animation: fadeIn 1.6s ease forwards;
+    gap: 15px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex: 1;
+}
+
+.col img {
+    width: 35px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 1.4rem;
+    margin-top: -6px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 255, 218, 0.6);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 255, 218, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 255, 218, 0.6);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 Small screens (phones) */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 20px;
+    }
+    .search input {
+        font-size: 0.9rem;
+        height: 48px;
+        padding: 8px 15px;
+    }
+    .search button {
+        width: 48px;
+        height: 48px;
+    }
+    .weather h1 {
+        font-size: 3rem;
+    }
+    .weather h2 {
+        font-size: 1.6rem;
+    }
+    .humidity, .wind {
+        font-size: 1.1rem;
+    }
+    .weather-icon {
+        width: 80px;
+    }
+}
+
+/* 📱 Medium screens (phablets/tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .weather h1 {
+        font-size: 3.5rem;
+    }
+    .weather h2 {
+        font-size: 2rem;
+    }
+    .humidity, .wind {
+        font-size: 1.2rem;
+    }
+    .weather-icon {
+        width: 100px;
+    }
+}
+
+/* 💻 Larger screens (laptops/desktops) */
+@media (min-width: 1024px) {
+    .card {
+        max-width: 550px;
+        padding: 50px 40px;
+    }
+    .weather h1 {
+        font-size: 5rem;
+    }
+    .weather h2 {
+        font-size: 3rem;
+    }
+}
